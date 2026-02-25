@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bhondo</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #171717;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      overflow: auto;
+      position: relative;
+    }
+    .container {
+      text-align: center;
+      z-index: 2;
+      padding: 20px;
+    }
+    .frame {
+      border: 2px solid #fff;
+      padding: 10px;
+      margin-bottom: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    iframe {
+      width: 100%;
+      height: 80vh; /* This height ensures the video is tall enough to resemble a YouTube Short */
+      max-width: 1200px;
+      position: relative;
+      z-index: 1;
+    }
+    img {
+      width: 100%;
+      max-width: 1200px;
+      position: relative;
+      z-index: 1;
+    }
+    .stars {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .star {
+      position: absolute;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.7);
+      animation: twinkle 5s infinite;
+      pointer-events: none;
+    }
+    @keyframes twinkle {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.5;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="frame">
+      <iframe src="https://www.youtube.com/embed/t5xS_IbdynY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="frame">
+      <img src="https://i.postimg.cc/59ZtBp19/Meri-Subha-ho-Tumhi-With-Mahh-Queen-yourrr-queen0904-heic.jpg" alt="Image 1">
+    </div>
+    <div class="frame">
+      <img src="https://i.postimg.cc/kX0t5qDc/IMG-20240612-135737.jpg" alt="Image 2">
+    </div>
+  </div>
+  <div class="stars">
+    <!-- Generate stars dynamically using JavaScript -->
+  </div>
+
+  <script>
+    // Generate stars dynamically
+    const starContainer = document.querySelector('.stars');
+    const numStars = 400;
+
+    for (let i = 0; i < numStars; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      star.style.width = `${Math.random() * 3}px`;
+      star.style.height = star.style.width;
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.animationDuration = `${Math.random() * 5 + 2}s`;
+      starContainer.appendChild(star);
+    }
+  </script>
+</body>
+</html>
