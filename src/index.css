@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for SmartRooti */
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+/* Add more custom styles here */
