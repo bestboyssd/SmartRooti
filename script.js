@@ -77,8 +77,10 @@ function transitionTheme(theme) {
   const toggleBounds = themeToggle?.getBoundingClientRect();
   const originX = toggleBounds ? toggleBounds.left + toggleBounds.width / 2 : window.innerWidth / 2;
   const originY = toggleBounds ? toggleBounds.top + toggleBounds.height / 2 : window.innerHeight / 2;
-  document.documentElement.style.setProperty("--theme-origin-x", `${originX}px`);
-  document.documentElement.style.setProperty("--theme-origin-y", `${originY}px`);
+  const originXPercent = (originX / window.innerWidth) * 100;
+  const originYPercent = (originY / window.innerHeight) * 100;
+  document.documentElement.style.setProperty("--theme-origin-x", `${originXPercent}%`);
+  document.documentElement.style.setProperty("--theme-origin-y", `${originYPercent}%`);
 
   document.startViewTransition(updateTheme);
 }
