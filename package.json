@@ -1,0 +1,19 @@
+{
+  "name": "smartrooti",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "packageManager": "pnpm@12.3.4",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0 --port 3000",
+    "build": "vite build",
+    "start": "vite preview --host 0.0.0.0 --port 3000",
+    "check": "node --check script.js"
+  },
+  "dependencies": {
+    "lucide": "^1.47.0"
+  },
+  "devDependencies": {
+    "vite": "^8.3.0"
+  }
+}

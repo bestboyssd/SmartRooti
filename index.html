@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f5ee" />
+    <meta name="description" content="A little round of happiness. Discover SmartRooti's rotis, golden kachoris, luchi, and flaky parathas. Call +91 7797541077 to enquire." />
+    <meta property="og:title" content="SmartRooti — A little round of happiness." />
+    <meta property="og:description" content="Everyday staples. Anything-but-ordinary comfort. Find your favourite roti, kachori, luchi, or paratha." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_IN" />
+    <title>SmartRooti — A little round of happiness.</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script>document.documentElement.classList.add("js");</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700;750;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "lucide": "/node_modules/lucide/dist/esm/lucide.mjs"
+        }
+      }
+    </script>
+    <script type="module" src="/script.js"></script>
+  </head>
+  <body>
+    <a class="skip-link button button-dark" href="#menu">Skip to the menu</a>
+
+    <!-- Reusable procedural artwork is retained for the 3D hero, not the product photographs. -->
+    <svg class="artwork-definitions" width="0" height="0" aria-hidden="true" focusable="false">
+      <defs id="food-defs">
+        <radialGradient id="roti-base" cx="42%" cy="35%" r="68%">
+          <stop offset="0" stop-color="#f5d591" />
+          <stop offset=".65" stop-color="#eabd70" />
+          <stop offset=".92" stop-color="#d69c4b" />
+          <stop offset="1" stop-color="#b97a31" />
+        </radialGradient>
+        <radialGradient id="toast-spot">
+          <stop offset="0" stop-color="#8b431e" stop-opacity=".75" />
+          <stop offset=".6" stop-color="#a85d29" stop-opacity=".55" />
+          <stop offset="1" stop-color="#b87535" stop-opacity="0" />
+        </radialGradient>
+        <clipPath id="food-clip"><circle cx="100" cy="100" r="96" /></clipPath>
+      </defs>
+    </svg>
+
+    <header class="site-header" id="site-header">
+      <div class="navigation container">
+        <a class="logo" href="#home" aria-label="SmartRooti home">
+          <span class="brand-symbol" aria-hidden="true"></span>
+          <span>SmartRooti<span class="logo-dot">.</span></span>
+        </a>
+        <nav class="desktop-navigation" aria-label="Main navigation">
+          <a href="#menu" data-nav-link>The menu</a>
+          <a href="#story" data-nav-link>Our philosophy</a>
+          <a href="#contact" data-nav-link>Get in touch</a>
+        </nav>
+        <div class="navigation-actions">
+          <a class="button button-dark nav-contact" href="tel:+917797541077" aria-label="Call SmartRooti" title="Call SmartRooti">
+            <i data-lucide="phone" aria-hidden="true"></i>
+            <span>Let’s talk</span>
+          </a>
+          <button class="theme-toggle" type="button" aria-label="Use dark mode" aria-pressed="false">
+            <i data-lucide="moon" class="theme-dark-icon" aria-hidden="true"></i>
+            <i data-lucide="sun" class="theme-light-icon" aria-hidden="true"></i>
+          </button>
+          <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-navigation">
+            <i data-lucide="menu" class="menu-open-icon" aria-hidden="true"></i>
+            <i data-lucide="x" class="menu-close-icon" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+      <nav class="mobile-navigation container" id="mobile-navigation" aria-label="Mobile navigation" hidden>
+        <a href="#menu">The menu <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+        <a href="#story">Our philosophy <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+        <a href="#contact">Get in touch <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+        <a class="mobile-phone" href="tel:+917797541077">+91 77975 41077 <i data-lucide="phone" aria-hidden="true"></i></a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="home" aria-labelledby="hero-title">
+        <div class="hero-sticky">
+          <div class="hero-layout container">
+            <div class="hero-copy">
+              <p class="eyebrow">Your everyday, made delicious</p>
+              <h1 id="hero-title">A little round<br />of <em>happiness.</em></h1>
+              <p class="hero-description">Soft rotis. Golden kachoris. Flaky parathas.<br class="desktop-break" /> Meet the kind of comfort that always has<br class="desktop-break" /> a place on your plate.</p>
+              <div class="hero-actions">
+                <a class="button button-orange" href="#menu">Explore the menu <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+                <a class="button button-light" href="#story">Meet SmartRooti <i data-lucide="arrow-right" aria-hidden="true"></i></a>
+              </div>
+              <p class="tiny-note"><i data-lucide="sparkles" aria-hidden="true"></i> Everyday staples. Anything-but-ordinary comfort.</p>
+            </div>
+
+            <div class="hero-visual" aria-hidden="true">
+              <div class="visual-ring"><span class="orbit-dot"></span></div>
+              <span class="visual-spark"><i data-lucide="sparkles"></i></span>
+              <div class="scene">
+                <div class="food-stack" id="food-stack">
+                  <div class="plate"></div>
+                  <div class="bread-layer" style="--i: 0; --rotation: 0deg"><svg viewBox="0 0 200 200"><use href="#food-roti" /></svg></div>
+                  <div class="bread-layer" style="--i: 1; --rotation: 65deg"><svg viewBox="0 0 200 200"><use href="#food-roti" /></svg></div>
+                  <div class="bread-layer" style="--i: 2; --rotation: 140deg"><svg viewBox="0 0 200 200"><use href="#food-roti" /></svg></div>
+                  <div class="bread-layer" style="--i: 3; --rotation: 220deg"><svg viewBox="0 0 200 200"><use href="#food-roti" /></svg></div>
+                </div>
+              </div>
+              <div class="floating-label label-top" id="label-top">
+                <span class="label-icon"><i data-lucide="wheat"></i></span>
+                <span><small>The everyday favourite</small><strong>Fresh hand roti</strong></span>
+              </div>
+              <div class="floating-label label-bottom" id="label-bottom">
+                <span class="label-heart"><i data-lucide="heart"></i></span>
+                <span><small>Round. Soft. Lovely.</small><strong>A stack of comfort.</strong></span>
+              </div>
+              <div class="visual-caption"><span>The SmartRooti round-up</span><p id="scene-caption">Good things come in layers.</p></div>
+            </div>
+          </div>
+          <div class="hero-bottom container" aria-hidden="true">
+            <span class="hero-bottom-note">Round food. Full hearts.</span>
+            <div class="scroll-hint"><span>Scroll to unstack</span><span class="scroll-track"><span id="scroll-progress"></span></span><i data-lucide="arrow-down"></i></div>
+            <span class="hero-edition">A little comfort, every day.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="menu-section" id="menu" aria-labelledby="menu-title">
+        <div class="container">
+          <div class="section-head reveal">
+            <div><p class="eyebrow">Find your favourite</p><h2 id="menu-title">Different rounds.<br />Same <em>happy feeling.</em></h2></div>
+            <p>From your daily roti to your weekend luchi.<br />Pick a favourite. Or make a little room<br class="desktop-break" /> for everything.</p>
+          </div>
+
+          <div class="menu-toolbar">
+            <div class="filters" role="group" aria-label="Filter the menu">
+              <button class="filter" type="button" data-filter="all" aria-pressed="true">All favourites</button>
+              <button class="filter" type="button" data-filter="roti" aria-pressed="false">Rotis</button>
+              <button class="filter" type="button" data-filter="stuffed" aria-pressed="false">Stuffed bites</button>
+              <button class="filter" type="button" data-filter="classic" aria-pressed="false">Golden classics</button>
+            </div>
+            <span class="menu-count" id="menu-count" role="status" aria-live="polite" aria-atomic="true">7 lovely favourites</span>
+          </div>
+
+          <div class="products" id="products">
+            <article class="product" data-category="roti">
+              <div class="product-image"><img src="/public/images/hand-roti.webp" alt="Soft handmade rotis, gently folded on a ceramic plate" width="720" height="720" loading="lazy" decoding="async" /><span class="product-tag">The everyday favourite</span></div>
+              <div class="product-content"><span class="product-kicker">Everyday comfort</span><h3>Fresh hand roti</h3><p>Soft, familiar, and ready for your favourite curry.</p><div class="product-bottom"><span class="product-price" data-product-price="hand-roti">Price on request</span><a class="product-enquire" href="mailto:suman.das.199972@gmail.com?subject=Enquiry%20about%20Fresh%20hand%20roti&amp;body=Hello%20SmartRooti!%20Please%20share%20the%20price%2C%20availability%2C%20and%20ingredients%20for%20fresh%20hand%20roti.%20Thank%20you!" aria-label="Enquire by email about fresh hand roti"><span>Enquire</span><i data-lucide="arrow-up-right" aria-hidden="true"></i></a></div></div>
+            </article>
+            <article class="product" data-category="roti">
+              <div class="product-image"><img src="/public/images/machine-roti.webp" alt="A neat stack of evenly round, lightly toasted machine rotis" width="720" height="720" loading="lazy" decoding="async" /><span class="product-tag">Your daily staple</span></div>
+              <div class="product-content"><span class="product-kicker">Simple &amp; satisfying</span><h3>Machine roti</h3><p>A simple round for lunches, dinners, and everything between.</p><div class="product-bottom"><span class="product-price" data-product-price="machine-roti">Price on request</span><a class="product-enquire" href="mailto:suman.das.199972@gmail.com?subject=Enquiry%20about%20Machine%20roti&amp;body=Hello%20SmartRooti!%20Please%20share%20the%20price%2C%20availability%2C%20and%20ingredients%20for%20machine%20roti.%20Thank%20you!" aria-label="Enquire by email about machine roti"><span>Enquire</span><i data-lucide="arrow-up-right" aria-hidden="true"></i></a></div></div>
+            </article>
+            <article class="product" data-category="stuffed">
+              <div class="product-image"><img src="/public/images/radhaballavi.webp" alt="Golden Bengali radhaballavi, one opened to reveal its lentil filling" width="720" height="720" loading="lazy" decoding="async" /><span class="product-tag">Bengali favourite</span></div>
+              <div class="product-content"><span class="product-kicker">A little indulgence</span><h3>Radhaballavi</h3><p>A golden, stuffed favourite for a little extra indulgence.</p><div class="product-bottom"><span class="product-price" data-product-price="radhaballavi">Price on request</span><a class="product-enquire" href="mailto:suman.das.199972@gmail.com?subject=Enquiry%20about%20Radhaballavi&amp;body=Hello%20SmartRooti!%20Please%20share%20the%20price%2C%20availability%2C%20and%20ingredients%20for%20radhaballavi.%20Thank%20you!" aria-label="Enquire by email about radhaballavi"><span>Enquire</span><i data-lucide="arrow-up-right" aria-hidden="true"></i></a></div></div>
+            </article>
+            <article class="product" data-category="stuffed">
+              <div class="product-image"><img src="/public/images/hing-kachori.webp" alt="Crisp golden hing kachoris with aromatic lentil filling" width="720" height="720" loading="lazy" decoding="async" /><span class="product-tag">Big on flavour</span></div>
+              <div class="product-content"><span class="product-kicker">Savoury comfort</span><h3>Hing kachori</h3><p>That distinctive hing character in a golden little package.</p><div class="product-bottom"><span class="product-price" data-product-price="hing-kachori">Price on request</span><a class="product-enquire" href="mailto:suman.das.199972@gmail.com?subject=Enquiry%20about%20Hing%20kachori&amp;body=Hello%20SmartRooti!%20Please%20share%20the%20price%2C%20availability%2C%20and%20ingredients%20for%20hing%20kachori.%20Thank%20you!" aria-label="Enquire by email about hing kachori"><span>Enquire</span><i data-lucide="arrow-up-right" aria-hidden="true"></i></a></div></div>
+            </article>
+            <article class="product" data-category="stuffed">
+              <div class="product-image"><img src="/public/images/peas-kachori.webp" alt="Peas kachori broken open to show its bright green pea filling" width="720" height="720" loading="lazy" decoding="async" /><span class="product-tag">Peas, please</span></div>
+              <div class="product-content"><span class="product-kicker">A feel-good favourite</span><h3>Peas kachori</h3><p>A peas-filled favourite worth making room on your plate for.</p><div class="product-bottom"><span class="product-price" data-product-price="peas-kachori">Price on request</span><a class="product-enquire" href="mailto:suman.das.199972@gmail.com?subject=Enquiry%20about%20Peas%20kachori&amp;body=Hello%20SmartRooti!%20Please%20share%20the%20price%2C%20availability%2C%20and%20ingredients%20for%20peas%20kachori.%20Thank%20you!" aria-label="Enquire by email about peas kachori"><span>Enquire</span><i data-lucide="arrow-up-right" aria-hidden="true"></i></a></div></div>
+            </article>
+            <article class="product" data-category="classic">
+              <div class="product-image"><img src="/public/images/luchi.webp" alt="Delicate pale golden luchi, puffed and stacked on an ivory plate" width="720" height="720" loading="lazy" decoding="async" /><span class="product-tag">A little celebration</span></div>
+              <div class="product-content"><span class="product-kicker">The timeless classic</span><h3>Luchi</h3><p>Light, puffed rounds with a big place in the comfort-food club.</p><div class="product-bottom"><span class="product-price" data-product-price="luchi">Price on request</span><a class="product-enquire" href="mailto:suman.das.199972@gmail.com?subject=Enquiry%20about%20Luchi&amp;body=Hello%20SmartRooti!%20Please%20share%20the%20price%2C%20availability%2C%20and%20ingredients%20for%20luchi.%20Thank%20you!" aria-label="Enquire by email about luchi"><span>Enquire</span><i data-lucide="arrow-up-right" aria-hidden="true"></i></a></div></div>
+            </article>
+            <article class="product" data-category="classic">
+              <div class="product-image"><img src="/public/images/paratha.webp" alt="Golden parathas with crisp, flaky concentric layers" width="720" height="720" loading="lazy" decoding="async" /><span class="product-tag">Layers to love</span></div>
+              <div class="product-content"><span class="product-kicker">Golden &amp; flaky</span><h3>Paratha</h3><p>A flaky, golden companion for your next satisfying meal.</p><div class="product-bottom"><span class="product-price" data-product-price="paratha">Price on request</span><a class="product-enquire" href="mailto:suman.das.199972@gmail.com?subject=Enquiry%20about%20Paratha&amp;body=Hello%20SmartRooti!%20Please%20share%20the%20price%2C%20availability%2C%20and%20ingredients%20for%20paratha.%20Thank%20you!" aria-label="Enquire by email about paratha"><span>Enquire</span><i data-lucide="arrow-up-right" aria-hidden="true"></i></a></div></div>
+            </article>
+            <aside class="menu-help" id="menu-help" aria-label="Need help choosing?">
+              <span class="help-symbol" aria-hidden="true"><i data-lucide="heart"></i></span>
+              <p>A question<br />on your <em>plate?</em></p>
+              <span>Can’t pick a favourite?<br />Let’s find your kind of comfort.</span>
+              <a class="text-link" href="#contact">We’re here to help <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+            </aside>
+          </div>
+          <p class="menu-note"><i data-lucide="wheat" aria-hidden="true"></i><span>Made with care, served fresh. Ask us about today's availability and ingredients.</span></p>
+          <noscript><p class="menu-note">All seven favourites are shown. Call or email us to enquire; JavaScript is only needed for filtering and the 3D animation.</p></noscript>
+        </div>
+      </section>
+
+      <section class="story-section" id="story" aria-labelledby="story-title">
+        <div class="container">
+          <div class="story-panel reveal">
+            <div class="story-art" aria-hidden="true">
+              <div class="story-orbit"></div>
+              <div class="story-circle"><svg viewBox="0 0 200 200"><use href="#food-paratha" /></svg></div>
+              <span class="story-spark"><i data-lucide="sparkles"></i></span>
+              <div class="story-stamp"><i data-lucide="heart"></i><span>Big love.<br />Round shapes.</span></div>
+              <span class="story-art-note">Little rituals. Lovely rounds.</span>
+            </div>
+            <div class="story-copy">
+              <p class="eyebrow">Simple food. Big feelings.</p>
+              <h2 id="story-title">Not just a side.<br />The <em>main comfort.</em></h2>
+              <p>The first tear of a soft roti. The little crunch of a kachori. The paratha you save the last bite of curry for.</p>
+              <p>We’re here for the small, delicious rituals that make a meal feel complete.</p>
+              <span class="story-signature">That’s the SmartRooti feeling.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-section container" id="contact" aria-labelledby="contact-title">
+        <div class="contact-panel reveal">
+          <div class="contact-copy">
+            <p class="eyebrow">Let’s talk good food</p>
+            <h2 id="contact-title">Good food starts<br />with a <em>hello.</em></h2>
+            <p>Questions about a favourite, prices, or availability?<br class="desktop-break" /> We’re just a call or an email away.</p>
+          </div>
+          <address class="contact-details">
+            <a class="contact-link" href="tel:+917797541077"><span class="contact-icon"><i data-lucide="phone" aria-hidden="true"></i></span><span class="contact-link-copy"><small>Give us a call</small><strong>+91 77975 41077</strong></span><i class="contact-arrow" data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+            <a class="contact-link" href="mailto:suman.das.199972@gmail.com"><span class="contact-icon"><i data-lucide="mail" aria-hidden="true"></i></span><span class="contact-link-copy"><small>Drop us a little hello</small><strong>suman.das.199972@gmail.com</strong></span><i class="contact-arrow" data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+            <p class="contact-note">Your next good meal is a conversation away.</p>
+          </address>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer container">
+      <div class="footer-main"><a class="logo" href="#home" aria-label="SmartRooti home"><span class="brand-symbol" aria-hidden="true"></span><span>SmartRooti<span class="logo-dot">.</span></span></a><p>Round food. Full hearts.</p><a class="back-to-top" href="#home">Back to top <i data-lucide="arrow-up" aria-hidden="true"></i></a></div>
+      <div class="footer-bottom"><p>© <span id="year">2026</span> SmartRooti. A little round of happiness.</p><span>Made for your everyday.</span></div>
+    </footer>
+  </body>
+</html>
