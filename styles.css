@@ -136,7 +136,7 @@ h1 em { font-family: var(--serif); font-weight: 400; color: var(--orange); lette
 .visual-spark { position: absolute; top: 100px; left: 57px; color: var(--orange-dark); transform: rotate(-12deg); }
 .visual-spark svg { width: 26px; height: 26px; stroke-width: 1.2px; }
 .scene { position: absolute; inset: 0; perspective: 1100px; perspective-origin: 50% 42%; }
-.food-stack { position: absolute; width: 350px; height: 350px; top: 102px; left: calc(50% - 175px); transform-style: preserve-3d; transform: rotateX(57deg) rotateZ(-24deg); }
+.food-stack { position: absolute; width: 350px; height: 350px; top: 102px; left: calc(50% - 175px); transform-style: preserve-3d; transform: rotateX(57deg) rotateZ(-24deg); will-change: transform; }
 .bread-layer { position: absolute; inset: 0; border-radius: 50%; background: #c38738; box-shadow: 0 2px 0 #c28738, 0 4px 0 #b5762b, 0 6px 0 #a96b27, 0 8px 3px rgb(111 66 21 / 25%); transform: translateZ(calc(var(--i) * 17px)); backface-visibility: hidden; }
 .bread-layer svg { width: 100%; height: 100%; border-radius: inherit; rotate: var(--rotation); }
 .plate { position: absolute; inset: -40px; border: 1px solid #fff; border-radius: 50%; background: linear-gradient(145deg, #fffef7, #e7e8d8); box-shadow: inset 0 0 0 17px #f5f5eb, inset 0 0 0 19px #dedfcf, 0 12px 0 #d8dcca, 0 30px 50px rgb(56 62 28 / 16%); transform: translateZ(-25px); }
@@ -541,15 +541,4 @@ html[data-theme="dark"] .theme-toggle:hover, html[data-theme="dark"] .menu-toggl
 
 @media (prefers-reduced-motion: reduce) and (max-width: 700px) {
   .hero-sticky { height: 790px; }
-}
-
-
-/* Keep the glass effect light on touch devices with smaller GPUs. */
-@media (max-width: 700px), (hover: none) and (pointer: coarse) {
-  .navigation, .mobile-navigation, html[data-theme="dark"] .mobile-navigation { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
-  .button-dark, .button-orange, .button-light, .filter, .filter[aria-pressed="true"], .product, .product-tag, .menu-help, .story-panel, .contact-panel, .floating-label,
-  html[data-theme="dark"] .button-dark, html[data-theme="dark"] .filter, html[data-theme="dark"] .filter[aria-pressed="true"], html[data-theme="dark"] .product, html[data-theme="dark"] .product-tag, html[data-theme="dark"] .menu-help, html[data-theme="dark"] .story-panel, html[data-theme="dark"] .contact-panel, html[data-theme="dark"] .floating-label {
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-  }
 }

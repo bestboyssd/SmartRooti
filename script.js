@@ -96,11 +96,6 @@ themeToggle?.addEventListener("click", () => {
 });
 
 const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-const deviceMemory = Number(window.navigator.deviceMemory);
-const processorCount = Number(window.navigator.hardwareConcurrency);
-const lowPowerDevice = window.navigator.connection?.saveData === true
-  || (deviceMemory > 0 && deviceMemory <= 2)
-  || (processorCount > 0 && processorCount <= 4);
 const header = document.querySelector("#site-header");
 const navigationToggle = document.querySelector(".menu-toggle");
 const mobileNavigation = document.querySelector("#mobile-navigation");
@@ -315,7 +310,7 @@ function paintScene() {
   pendingFrame = 0;
   header.classList.toggle("is-scrolled", window.scrollY > 25);
 
-  const progress = motionQuery.matches || lowPowerDevice ? 0 : Math.max(0, Math.min(1, (window.scrollY - heroTop) / scrollRange));
+  const progress = motionQuery.matches ? 0 : Math.max(0, Math.min(1, (window.scrollY - heroTop) / scrollRange));
   if (progress === lastProgress) return;
   lastProgress = progress;
 
@@ -342,6 +337,12 @@ function paintScene() {
 }
 
 function scheduleScene() {
+  const isScrolled = window.scrollY > 25;
+  if (header.classList.contains("is-scrolled") !== isScrolled) header.classList.toggle("is-scrolled", isScrolled);
+
+  const beforeHero = window.scrollY < heroTop && lastProgress === 0;
+  const afterHero = window.scrollY > heroTop + scrollRange && lastProgress === 1;
+  if (beforeHero || afterHero) return;
   if (!pendingFrame) pendingFrame = requestAnimationFrame(paintScene);
 }
 
