@@ -1,7 +1,9 @@
-import { defineConfig } from "vite";
+﻿import { defineConfig } from "vite";
+
+const pagesBase = process.env.GITHUB_ACTIONS === "true" ? "/SmartRooti/" : "/";
 
 export default defineConfig({
-  base: "/SmartRooti/",
+  base: pagesBase,
   build: {
     cssMinify: false,
   },
