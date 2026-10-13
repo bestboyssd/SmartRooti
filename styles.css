@@ -9,8 +9,8 @@
   --menu-background: #eff0e7;
   --white: #fffef9;
   --line: rgb(38 59 45 / 13%);
-  --scroll-cue-surface: rgb(255 254 249 / 82%);
-  --scroll-cue-border: rgb(38 59 45 / 12%);
+  --scroll-cue-surface: linear-gradient(135deg, rgb(255 255 255 / 54%), rgb(255 254 249 / 18%));
+  --scroll-cue-border: rgb(38 59 45 / 22%);
   --scroll-cue-track: rgb(38 59 45 / 14%);
   --scroll-cue-shadow: 0 8px 24px rgb(56 62 28 / 9%);
   --sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
@@ -29,8 +29,8 @@ html[data-theme="dark"] {
   --menu-background: #202d25;
   --white: #f7f4eb;
   --line: rgb(244 240 228 / 17%);
-  --scroll-cue-surface: rgb(32 45 37 / 86%);
-  --scroll-cue-border: rgb(244 240 228 / 14%);
+  --scroll-cue-surface: linear-gradient(135deg, rgb(255 255 255 / 21%), rgb(255 255 255 / 7%));
+  --scroll-cue-border: rgb(244 240 228 / 28%);
   --scroll-cue-track: rgb(244 240 228 / 20%);
   --scroll-cue-shadow: 0 8px 24px rgb(0 0 0 / 20%);
 }
@@ -162,7 +162,7 @@ h1 em { font-family: var(--serif); font-weight: 400; color: var(--orange); lette
 .visual-caption p { margin: 9px 0 0; font-family: var(--serif); font-size: 19px; font-style: italic; }
 .hero-bottom { position: absolute; display: flex; justify-content: space-between; align-items: center; bottom: 27px; left: 50%; transform: translateX(-50%); color: var(--muted); }
 .hero-bottom-note, .hero-edition { font-size: 9px; letter-spacing: .025em; }
-.scroll-hint { display: flex; align-items: center; gap: 12px; min-height: 42px; padding: 5px 6px 5px 15px; border: 1px solid var(--scroll-cue-border); border-radius: 999px; background: var(--scroll-cue-surface); box-shadow: var(--scroll-cue-shadow); -webkit-backdrop-filter: blur(14px) saturate(1.25); backdrop-filter: blur(14px) saturate(1.25); color: var(--ink); font-size: 8px; font-weight: 600; text-transform: uppercase; letter-spacing: .13em; }
+.scroll-hint { display: flex; align-items: center; gap: 12px; min-height: 42px; padding: 5px 6px 5px 15px; border: 1px solid var(--scroll-cue-border); border-radius: 999px; background: var(--scroll-cue-surface); box-shadow: var(--scroll-cue-shadow), inset 0 1px 0 rgb(255 255 255 / 22%), inset 0 -1px 0 rgb(0 0 0 / 8%); -webkit-backdrop-filter: blur(22px) saturate(1.5); backdrop-filter: blur(22px) saturate(1.5); color: var(--ink); font-size: 8px; font-weight: 600; text-transform: uppercase; letter-spacing: .13em; }
 .scroll-hint-label { white-space: nowrap; }
 .scroll-track { width: 48px; height: 3px; border-radius: 99px; background: var(--scroll-cue-track); overflow: hidden; }
 .scroll-track > span { display: block; width: 100%; height: 100%; border-radius: inherit; background: var(--orange); transform: scaleX(0); transform-origin: left; transition: transform .16s ease-out; }
@@ -417,7 +417,7 @@ html[data-theme="dark"] .theme-toggle:hover, html[data-theme="dark"] .menu-toggl
   .hero-actions { justify-content: center; gap: 8px; }
   .hero-actions .button { min-height: 47px; font-size: 10px; padding-inline: 19px; gap: 14px; }
   .tiny-note { display: none; }
-  .hero-visual { width: min(400px, 100%); height: 342px; margin: auto; }
+  .hero-visual { width: min(400px, 100%); height: 342px; margin: auto; transform: translateY(-32px); }
   .hero-sticky::before { top: 290px; right: -160px; width: 660px; height: 620px; }
   .visual-ring { width: 288px; height: 288px; top: 17px; }
   .visual-ring::before { inset: 22px; }
@@ -438,7 +438,7 @@ html[data-theme="dark"] .theme-toggle:hover, html[data-theme="dark"] .menu-toggl
   .visual-caption { bottom: 0; }
   .visual-caption > span { font-size: 7px; }
   .visual-caption p { font-size: 16px; margin-top: 6px; }
-  .hero-bottom { justify-content: center; bottom: 20px; }
+  .hero-bottom { justify-content: center; bottom: 14px; }
   .hero-bottom-note, .hero-edition { display: none; }
   .scroll-hint { min-height: 38px; gap: 8px; padding: 4px 5px 4px 12px; font-size: 7px; letter-spacing: .11em; }
   .scroll-track { width: 30px; height: 2px; }
@@ -567,4 +567,17 @@ html[data-theme="dark"] .theme-toggle:hover, html[data-theme="dark"] .menu-toggl
   html[data-theme="dark"] .mobile-navigation { background: linear-gradient(135deg, rgb(255 255 255 / 12%), rgb(255 255 255 / 3%)); backdrop-filter: blur(26px) saturate(155%); -webkit-backdrop-filter: blur(26px) saturate(155%); }
   html[data-theme="dark"] .floating-label { background: linear-gradient(135deg, rgb(255 255 255 / 11%), rgb(255 255 255 / 3%)); backdrop-filter: blur(20px) saturate(145%); -webkit-backdrop-filter: blur(20px) saturate(145%); }
   html[data-theme="dark"] .menu-section { background: radial-gradient(ellipse at 10% 12%, rgb(108 145 91 / 34%), transparent 44%), radial-gradient(ellipse at 88% 55%, rgb(180 104 73 / 14%), transparent 40%), linear-gradient(180deg, #21372a, #17281f); }
+}
+
+@media (max-width: 700px) and (max-height: 800px) {
+  .label-top { top: 38px; }
+  .floating-label { gap: 6px; padding: 8px 9px; }
+  .floating-label small { margin-bottom: 2px; font-size: 6px; }
+  .floating-label strong { font-size: 9px; }
+  .label-icon { width: 22px; height: 26px; }
+  .label-icon svg { width: 14px; height: 14px; }
+  .food-stack { top: 38px; }
+  .visual-caption { bottom: 8px; }
+  .scroll-hint { min-height: 32px; padding: 2px 4px 2px 10px; }
+  .scroll-cue-icon { width: 23px; height: 23px; }
 }
