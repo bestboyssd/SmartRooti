@@ -5,15 +5,14 @@ const pagesBase = process.env.GITHUB_ACTIONS === "true" ? "/SmartRooti/" : "/";
 export default defineConfig({
   base: pagesBase,
   build: {
-    cssMinify: false,
+    cssMinify: true,
   },
   server: {
-    host: "0.0.0.0",
+    host: "127.0.0.1",
     port: 3000,
-    allowedHosts: true,
   },
   preview: {
-    host: "0.0.0.0",
+    host: "127.0.0.1",
     port: 3000,
   },
 });
