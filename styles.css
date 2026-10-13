@@ -542,3 +542,17 @@ html[data-theme="dark"] .theme-toggle:hover, html[data-theme="dark"] .menu-toggl
 @media (prefers-reduced-motion: reduce) and (max-width: 700px) {
   .hero-sticky { height: 790px; }
 }
+
+
+/* Phone glass refresh: cache-busted and tuned for clearer frosted surfaces. */
+@media (max-width: 700px) {
+  .navigation { background: linear-gradient(135deg, rgb(255 255 255 / 38%), rgb(255 254 249 / 10%)); backdrop-filter: blur(28px) saturate(155%); -webkit-backdrop-filter: blur(28px) saturate(155%); }
+  .mobile-navigation { background: linear-gradient(135deg, rgb(255 255 255 / 46%), rgb(255 254 249 / 15%)); backdrop-filter: blur(24px) saturate(145%); -webkit-backdrop-filter: blur(24px) saturate(145%); }
+  .floating-label { background: linear-gradient(135deg, rgb(255 255 255 / 28%), rgb(255 254 249 / 8%)); backdrop-filter: blur(20px) saturate(145%); -webkit-backdrop-filter: blur(20px) saturate(145%); }
+  .menu-section { background: radial-gradient(ellipse at 10% 12%, rgb(210 223 183 / 34%), transparent 42%), radial-gradient(ellipse at 90% 52%, rgb(245 179 123 / 12%), transparent 40%), var(--menu-background); }
+  html[data-theme="dark"] .navigation { background: linear-gradient(135deg, rgb(255 255 255 / 9%), rgb(255 255 255 / 2%)); }
+  html[data-theme="dark"] .is-scrolled .navigation { background: linear-gradient(135deg, rgb(255 255 255 / 11%), rgb(255 255 255 / 3%)); }
+  html[data-theme="dark"] .mobile-navigation { background: linear-gradient(135deg, rgb(255 255 255 / 12%), rgb(255 255 255 / 3%)); backdrop-filter: blur(26px) saturate(155%); -webkit-backdrop-filter: blur(26px) saturate(155%); }
+  html[data-theme="dark"] .floating-label { background: linear-gradient(135deg, rgb(255 255 255 / 11%), rgb(255 255 255 / 3%)); backdrop-filter: blur(20px) saturate(145%); -webkit-backdrop-filter: blur(20px) saturate(145%); }
+  html[data-theme="dark"] .menu-section { background: radial-gradient(ellipse at 10% 12%, rgb(108 145 91 / 34%), transparent 44%), radial-gradient(ellipse at 88% 55%, rgb(180 104 73 / 14%), transparent 40%), linear-gradient(180deg, #21372a, #17281f); }
+}
