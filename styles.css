@@ -9,6 +9,10 @@
   --menu-background: #eff0e7;
   --white: #fffef9;
   --line: rgb(38 59 45 / 13%);
+  --scroll-cue-surface: rgb(255 254 249 / 82%);
+  --scroll-cue-border: rgb(38 59 45 / 12%);
+  --scroll-cue-track: rgb(38 59 45 / 14%);
+  --scroll-cue-shadow: 0 8px 24px rgb(56 62 28 / 9%);
   --sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
   --serif: "DM Serif Display", Georgia, serif;
   --radius: 24px;
@@ -25,6 +29,10 @@ html[data-theme="dark"] {
   --menu-background: #202d25;
   --white: #f7f4eb;
   --line: rgb(244 240 228 / 17%);
+  --scroll-cue-surface: rgb(32 45 37 / 86%);
+  --scroll-cue-border: rgb(244 240 228 / 14%);
+  --scroll-cue-track: rgb(244 240 228 / 20%);
+  --scroll-cue-shadow: 0 8px 24px rgb(0 0 0 / 20%);
 }
 
 *,
@@ -154,10 +162,13 @@ h1 em { font-family: var(--serif); font-weight: 400; color: var(--orange); lette
 .visual-caption p { margin: 9px 0 0; font-family: var(--serif); font-size: 19px; font-style: italic; }
 .hero-bottom { position: absolute; display: flex; justify-content: space-between; align-items: center; bottom: 27px; left: 50%; transform: translateX(-50%); color: var(--muted); }
 .hero-bottom-note, .hero-edition { font-size: 9px; letter-spacing: .025em; }
-.scroll-hint { display: flex; align-items: center; gap: 14px; font-size: 8px; text-transform: uppercase; letter-spacing: .15em; }
-.scroll-hint > svg { width: 13px; height: 13px; }
-.scroll-track { width: 50px; height: 2px; background: #d8deca; overflow: hidden; }
-.scroll-track > span { display: block; height: 100%; background: var(--orange); transform: scaleX(0); transform-origin: left; }
+.scroll-hint { display: flex; align-items: center; gap: 12px; min-height: 42px; padding: 5px 6px 5px 15px; border: 1px solid var(--scroll-cue-border); border-radius: 999px; background: var(--scroll-cue-surface); box-shadow: var(--scroll-cue-shadow); -webkit-backdrop-filter: blur(14px) saturate(1.25); backdrop-filter: blur(14px) saturate(1.25); color: var(--ink); font-size: 8px; font-weight: 600; text-transform: uppercase; letter-spacing: .13em; }
+.scroll-hint-label { white-space: nowrap; }
+.scroll-track { width: 48px; height: 3px; border-radius: 99px; background: var(--scroll-cue-track); overflow: hidden; }
+.scroll-track > span { display: block; width: 100%; height: 100%; border-radius: inherit; background: var(--orange); transform: scaleX(0); transform-origin: left; transition: transform .16s ease-out; }
+.scroll-cue-icon { display: grid; width: 29px; height: 29px; place-items: center; border: 1px solid var(--scroll-cue-border); border-radius: 50%; background: var(--sage); color: var(--orange-dark); }
+.scroll-cue-icon svg { width: 13px; height: 13px; animation: scroll-cue-bob 1.8s ease-in-out infinite; }
+@keyframes scroll-cue-bob { 0%, 100% { transform: translateY(-1px); } 50% { transform: translateY(2px); } }
 
 .menu-section { position: relative; z-index: 6; padding: 90px 0 70px; border-top: 1px solid rgb(38 59 45 / 8%); border-radius: 40px 40px 0 0; background: var(--menu-background); }
 .section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-bottom: 40px; }
@@ -429,8 +440,9 @@ html[data-theme="dark"] .theme-toggle:hover, html[data-theme="dark"] .menu-toggl
   .visual-caption p { font-size: 16px; margin-top: 6px; }
   .hero-bottom { justify-content: center; bottom: 20px; }
   .hero-bottom-note, .hero-edition { display: none; }
-  .scroll-hint { font-size: 7px; gap: 12px; }
-  .scroll-track { width: 39px; }
+  .scroll-hint { min-height: 38px; gap: 8px; padding: 4px 5px 4px 12px; font-size: 7px; letter-spacing: .11em; }
+  .scroll-track { width: 30px; height: 2px; }
+  .scroll-cue-icon { width: 27px; height: 27px; }
   .menu-section { padding: 62px 0 44px; border-radius: 29px 29px 0 0; }
   .section-head { display: block; margin-bottom: 25px; }
   h2 { font-size: clamp(38px, 7vw, 46px); }
@@ -534,7 +546,7 @@ html[data-theme="dark"] .theme-toggle:hover, html[data-theme="dark"] .menu-toggl
   .hero-sticky { position: relative; height: 780px; min-height: 0; }
   .hero-layout { min-height: 0; }
   .food-stack { will-change: auto; }
-  .scroll-hint { display: none; }
+
   .mobile-navigation.is-opening, .mobile-navigation.is-closing { animation: none; }
   .motion-ready .reveal { opacity: 1; transform: none; }
 }
