@@ -580,4 +580,9 @@ html[data-theme="dark"] .theme-toggle:hover, html[data-theme="dark"] .menu-toggl
   .visual-caption { bottom: 8px; }
   .scroll-hint { min-height: 32px; padding: 2px 4px 2px 10px; }
   .scroll-cue-icon { width: 23px; height: 23px; }
+  .hero-bottom { top: 428px; right: auto; bottom: auto; left: 12px; width: max-content; transform: none; }
+  .food-stack { top: 50px; }
+  .visual-caption { bottom: 0; }
+  .visual-spark { top: 24px; }
+  .orbit-dot { top: 12px; }
 }
