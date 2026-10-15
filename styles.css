@@ -609,3 +609,7 @@ html[data-theme="dark"] .theme-toggle:hover, html[data-theme="dark"] .menu-toggl
   .scroll-cue-icon { width: 23px; height: 23px; }
   .hero-bottom { bottom: 8px; }
 }
+
+@media (max-width: 700px) {
+  .hero-bottom { display: none; }
+}
