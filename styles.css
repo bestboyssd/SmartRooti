@@ -439,6 +439,7 @@ html[data-theme="dark"] .theme-toggle:hover, html[data-theme="dark"] .menu-toggl
   .visual-caption > span { font-size: 7px; }
   .visual-caption p { font-size: 16px; margin-top: 6px; }
   .hero-bottom { justify-content: center; bottom: 14px; }
+  .scroll-hint { display: none; }
   .hero-bottom-note, .hero-edition { display: none; }
   .scroll-hint { min-height: 38px; gap: 8px; padding: 4px 5px 4px 12px; font-size: 7px; letter-spacing: .11em; }
   .scroll-track { width: 30px; height: 2px; }
