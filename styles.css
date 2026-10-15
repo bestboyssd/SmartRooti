@@ -170,7 +170,7 @@ h1 em { font-family: var(--serif); font-weight: 400; color: var(--orange); lette
 .scroll-cue-icon svg { width: 13px; height: 13px; animation: scroll-cue-bob 1.8s ease-in-out infinite; }
 @keyframes scroll-cue-bob { 0%, 100% { transform: translateY(-1px); } 50% { transform: translateY(2px); } }
 
-.menu-section { position: relative; z-index: 6; padding: 90px 0 70px; border-top: 1px solid rgb(38 59 45 / 8%); border-radius: 40px 40px 0 0; background: var(--menu-background); }
+.menu-section { position: relative; z-index: 6; padding: 90px 0 70px; border-radius: 40px 40px 0 0; background: var(--menu-background); }
 .section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-bottom: 40px; }
 h2 { margin: 0; font-size: clamp(38px, 4vw, 56px); font-weight: 550; line-height: 1.11; letter-spacing: -.055em; }
 h2 em { font-family: var(--serif); font-weight: 400; color: var(--orange-dark); letter-spacing: -.035em; }
@@ -611,5 +611,14 @@ html[data-theme="dark"] .theme-toggle:hover, html[data-theme="dark"] .menu-toggl
 }
 
 @media (max-width: 700px) {
-  .hero-bottom { display: none; }
+  .hero-copy { z-index: 8; isolation: isolate; }
+  .hero-visual { z-index: 1; }
+  .hero-actions { position: relative; z-index: 1; }
+  .hero-actions .button { position: relative; z-index: 1; -webkit-backdrop-filter: none; backdrop-filter: none; }
+  .hero-actions .button-orange { background: linear-gradient(135deg, #ee9160, #ad4e30); border-color: rgb(255 218 188 / 76%); }
+  .hero-actions .button-light { background: #f2f0e7; border-color: rgb(38 59 45 / 18%); color: #263b2d; }
+  html[data-theme="dark"] .hero-actions .button-light { background: #2a4333; border-color: rgb(244 240 228 / 24%); color: #f4f0e4; }
+  .visual-caption { bottom: -42px; z-index: 6; }
+  .hero-bottom,
+  .scroll-hint { display: none !important; }
 }
