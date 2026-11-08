@@ -39,7 +39,6 @@ html[data-theme="dark"] {
 *::before,
 *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 115px; }
-html.hero-touch-scrolling { scroll-behavior: auto !important; }
 ::view-transition-group(root) { animation-duration: 1s; }
 ::view-transition-image-pair(root) { isolation: isolate; overflow: clip; }
 ::view-transition-old(root) { animation: theme-old .5s cubic-bezier(.4, 0, 1, 1) both; }
