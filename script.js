@@ -310,8 +310,12 @@ function paintScene() {
   pendingFrame = 0;
   header.classList.toggle("is-scrolled", window.scrollY > 25);
 
-  const progress = motionQuery.matches ? 0 : Math.max(0, Math.min(1, (window.scrollY - heroTop) / scrollRange));
-  hero.classList.toggle("is-exiting", compact && progress >= 0.82);
+  const rawProgress = Math.max(0, Math.min(1, (window.scrollY - heroTop) / scrollRange));
+  const progress = motionQuery.matches ? 0 : rawProgress;
+  const heroIsExiting = motionQuery.matches
+    ? window.scrollY >= heroTop + sticky.offsetHeight
+    : rawProgress >= 0.82;
+  hero.classList.toggle("is-exiting", compact && heroIsExiting);
   if (progress === lastProgress) return;
   lastProgress = progress;
 
