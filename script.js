@@ -320,7 +320,7 @@ function paintScene() {
   lastProgress = progress;
 
   const eased = progress * progress * (3 - 2 * progress);
-  const spread = Math.sin(eased * Math.PI * 0.86);
+  const spread = Math.sin(eased * Math.PI * (compact ? 0.5 : 0.86));
   const lift = compact ? 27 : 43;
   stack.style.transform = `translateY(${eased * 14}px) rotateX(${57 - eased * 17}deg) rotateZ(${-24 + eased * 48}deg)`;
 
@@ -367,6 +367,8 @@ if ("ResizeObserver" in window) {
   resizeObserver.observe(hero);
   resizeObserver.observe(sticky);
 }
+
+measureScene();
 
 /* ---------- Reveal content without scroll handlers ---------- */
 let revealObserver;
