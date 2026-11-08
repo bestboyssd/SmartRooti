@@ -618,7 +618,8 @@ html[data-theme="dark"] .theme-toggle:hover, html[data-theme="dark"] .menu-toggl
   .hero-actions .button-orange { background: linear-gradient(135deg, #ee9160, #ad4e30); border-color: rgb(255 218 188 / 76%); }
   .hero-actions .button-light { background: #f2f0e7; border-color: rgb(38 59 45 / 18%); color: #263b2d; }
   html[data-theme="dark"] .hero-actions .button-light { background: #2a4333; border-color: rgb(244 240 228 / 24%); color: #f4f0e4; }
-  .visual-caption { bottom: 0; z-index: 6; }
+  .visual-caption { bottom: -42px; z-index: 6; transition: opacity .2s ease, visibility .2s ease; }
+  .hero.is-exiting .visual-caption { opacity: 0; visibility: hidden; }
   .hero-bottom,
   .scroll-hint { display: none !important; }
 }

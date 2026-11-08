@@ -311,6 +311,7 @@ function paintScene() {
   header.classList.toggle("is-scrolled", window.scrollY > 25);
 
   const progress = motionQuery.matches ? 0 : Math.max(0, Math.min(1, (window.scrollY - heroTop) / scrollRange));
+  hero.classList.toggle("is-exiting", compact && progress >= 0.82);
   if (progress === lastProgress) return;
   lastProgress = progress;
 
