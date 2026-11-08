@@ -362,6 +362,45 @@ function measureScene() {
 window.addEventListener("scroll", scheduleScene, { passive: true });
 window.addEventListener("resize", measureScene, { passive: true });
 
+let heroTouchActive = false;
+let previousTouchY = 0;
+
+function startHeroTouch(event) {
+  if (!compact || motionQuery.matches || event.touches.length !== 1) {
+    heroTouchActive = false;
+    return;
+  }
+
+  const scrollLimit = heroTop + scrollRange;
+  heroTouchActive = window.scrollY >= heroTop && window.scrollY < scrollLimit;
+  previousTouchY = event.touches[0].clientY;
+}
+
+function moveHeroTouch(event) {
+  if (!heroTouchActive || event.touches.length !== 1) return;
+
+  const touchY = event.touches[0].clientY;
+  const scrollDelta = previousTouchY - touchY;
+  previousTouchY = touchY;
+  if (scrollDelta <= 0) return;
+
+  if (event.cancelable) event.preventDefault();
+  const scrollLimit = heroTop + scrollRange;
+  const nextScrollY = Math.min(scrollLimit, window.scrollY + scrollDelta);
+  document.documentElement.classList.add("hero-touch-scrolling");
+  window.scrollTo(0, nextScrollY);
+}
+
+function finishHeroTouch() {
+  heroTouchActive = false;
+  document.documentElement.classList.remove("hero-touch-scrolling");
+}
+
+window.addEventListener("touchstart", startHeroTouch, { passive: true });
+window.addEventListener("touchmove", moveHeroTouch, { passive: false });
+window.addEventListener("touchend", finishHeroTouch, { passive: true });
+window.addEventListener("touchcancel", finishHeroTouch, { passive: true });
+
 if ("ResizeObserver" in window) {
   const resizeObserver = new ResizeObserver(measureScene);
   resizeObserver.observe(hero);
