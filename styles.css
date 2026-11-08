@@ -173,6 +173,7 @@ h1 em { font-family: var(--serif); font-weight: 400; color: var(--orange); lette
 @keyframes scroll-cue-bob { 0%, 100% { transform: translateY(-1px); } 50% { transform: translateY(2px); } }
 
 .menu-section { position: relative; z-index: 6; padding: 90px 0 70px; border-radius: 0; background: var(--menu-background); }
+.menu-bridge { display: none; }
 .section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-bottom: 40px; }
 h2 { margin: 0; font-size: clamp(38px, 4vw, 56px); font-weight: 550; line-height: 1.11; letter-spacing: -.055em; }
 h2 em { font-family: var(--serif); font-weight: 400; color: var(--orange-dark); letter-spacing: -.035em; }
@@ -444,7 +445,9 @@ html[data-theme="dark"] .theme-toggle:hover, html[data-theme="dark"] .menu-toggl
   .scroll-hint { min-height: 38px; gap: 8px; padding: 4px 5px 4px 12px; font-size: 7px; letter-spacing: .11em; }
   .scroll-track { width: 30px; height: 2px; }
   .scroll-cue-icon { width: 27px; height: 27px; }
-  .menu-section { padding: 62px 0 44px; }
+  .menu-section { padding: 22px 0 44px; }
+  .menu-bridge { display: flex; width: fit-content; max-width: 100%; min-height: 34px; align-items: center; justify-content: center; gap: 7px; margin: 0 auto 6px; padding: 7px 12px; border: 1px solid var(--line); border-radius: 999px; background: linear-gradient(135deg, rgb(255 255 255 / 43%), rgb(255 254 249 / 14%)); box-shadow: 0 6px 14px rgb(47 61 32 / 5%), inset 0 1px 0 rgb(255 255 255 / 70%); color: var(--muted); font-size: 8px; font-weight: 650; letter-spacing: .045em; white-space: nowrap; }
+  .menu-bridge svg { width: 13px; height: 13px; color: var(--orange-dark); }
   .section-head { display: block; margin-bottom: 25px; }
   h2 { font-size: clamp(38px, 7vw, 46px); }
   .eyebrow { font-size: 8px; }
@@ -567,6 +570,7 @@ html[data-theme="dark"] .theme-toggle:hover, html[data-theme="dark"] .menu-toggl
   html[data-theme="dark"] .is-scrolled .navigation { background: linear-gradient(135deg, rgb(255 255 255 / 11%), rgb(255 255 255 / 3%)); }
   html[data-theme="dark"] .mobile-navigation { background: linear-gradient(135deg, rgb(255 255 255 / 12%), rgb(255 255 255 / 3%)); backdrop-filter: blur(26px) saturate(155%); -webkit-backdrop-filter: blur(26px) saturate(155%); }
   html[data-theme="dark"] .floating-label { background: linear-gradient(135deg, rgb(255 255 255 / 11%), rgb(255 255 255 / 3%)); backdrop-filter: blur(20px) saturate(145%); -webkit-backdrop-filter: blur(20px) saturate(145%); }
+  html[data-theme="dark"] .menu-bridge { border-color: rgb(244 240 228 / 20%); background: linear-gradient(135deg, rgb(255 255 255 / 10%), rgb(255 255 255 / 3%)); box-shadow: 0 6px 14px rgb(0 0 0 / 12%), inset 0 1px 0 rgb(255 255 255 / 14%); }
 
 }
 
