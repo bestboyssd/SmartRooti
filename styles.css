@@ -444,7 +444,7 @@ html[data-theme="dark"] .theme-toggle:hover, html[data-theme="dark"] .menu-toggl
   .scroll-hint { min-height: 38px; gap: 8px; padding: 4px 5px 4px 12px; font-size: 7px; letter-spacing: .11em; }
   .scroll-track { width: 30px; height: 2px; }
   .scroll-cue-icon { width: 27px; height: 27px; }
-  .menu-section { padding: 62px 0 44px; border-radius: 29px 29px 0 0; }
+  .menu-section { padding: 62px 0 44px; border-radius: 0; }
   .section-head { display: block; margin-bottom: 25px; }
   h2 { font-size: clamp(38px, 7vw, 46px); }
   .eyebrow { font-size: 8px; }
@@ -621,7 +621,7 @@ html[data-theme="dark"] .theme-toggle:hover, html[data-theme="dark"] .menu-toggl
   html[data-theme="dark"] .hero-actions .button-light { background: #2a4333; border-color: rgb(244 240 228 / 24%); color: #f4f0e4; }
   .visual-caption { bottom: -42px; z-index: 6; transition: opacity .2s ease, visibility .2s ease; }
   .hero.is-exiting .visual-caption { opacity: 0; visibility: hidden; }
-  .hero-sticky::after { content: ""; position: absolute; z-index: 7; right: 0; bottom: 0; left: 0; height: 22px; border-radius: 29px 29px 0 0; background: var(--menu-background); pointer-events: none; }
+  .hero-sticky::after { content: ""; position: absolute; z-index: 7; right: 0; bottom: 0; left: 0; height: 22px; border-radius: 0; background: var(--menu-background); pointer-events: none; }
   .hero-bottom,
   .scroll-hint { display: none !important; }
 }
