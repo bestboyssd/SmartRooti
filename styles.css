@@ -406,8 +406,8 @@ html[data-theme="dark"] .theme-toggle:hover, html[data-theme="dark"] .menu-toggl
   .nav-contact svg { width: 12px; height: 12px; }
   .theme-toggle { width: 40px; height: 40px; }
   .theme-toggle svg { width: 16px; height: 16px; }
-  .hero { height: calc(100svh + 320px); min-height: 0; }
-  .hero-sticky { height: 100svh; min-height: 0; }
+  .hero { height: calc(100svh + 320px); height: calc(100dvh + 320px); min-height: 0; }
+  .hero-sticky { height: 100svh; height: 100dvh; min-height: 0; }
   .hero-layout { height: 100%; grid-template-columns: 1fr; grid-template-rows: auto minmax(0, 1fr); align-items: start; gap: 6px; padding-top: 96px; padding-bottom: 66px; }
   .hero-copy { text-align: center; padding-bottom: 0; }
   .hero-copy .eyebrow { justify-content: center; font-size: 8px; margin-bottom: 19px; }

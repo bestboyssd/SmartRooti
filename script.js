@@ -378,6 +378,7 @@ function configureMotion() {
 
   if (!motionQuery.matches && "IntersectionObserver" in window) {
     document.documentElement.classList.add("motion-ready");
+    const revealRootMargin = desktopQuery.matches ? "0px" : `0px 0px ${window.innerHeight}px 0px`;
     revealObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -385,7 +386,7 @@ function configureMotion() {
           revealObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.1, rootMargin: revealRootMargin });
     document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
   }
 
@@ -408,6 +409,7 @@ if ("IntersectionObserver" in window) {
 }
 
 addMediaQueryListener(motionQuery, configureMotion);
+addMediaQueryListener(desktopQuery, configureMotion);
 configureMotion();
 const yearTarget = document.querySelector("#year");
 if (yearTarget) yearTarget.textContent = String(new Date().getFullYear());
